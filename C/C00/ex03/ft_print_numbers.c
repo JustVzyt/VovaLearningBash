@@ -2,24 +2,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_reverse_alphabet.c                        :+:      :+:    :+:   */
+/*   ft_print_numbers.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: justvzyt <justvzyt@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/07/20 18:08:24 by justvzyt          #+#    #+#             */
-/*   Updated: 2025/07/20 19:30:01 by justvzyt         ###   ########.fr       */
+/*   Created: 2025/07/20 19:30:27 by justvzyt          #+#    #+#             */
+/*   Updated: 2025/07/20 19:30:47 by justvzyt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-void ft_print_reverse_alphabet(void) 
+void    ft_print_numbers(void)
 {
-    int i = 122;
-
-    while (i>96) 
-    {
-        write(1, &i, 1);
-        i--;
-    }
+    write(1, "0123456789", 10);
 }

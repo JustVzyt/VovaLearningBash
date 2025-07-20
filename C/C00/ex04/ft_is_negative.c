@@ -2,24 +2,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_reverse_alphabet.c                        :+:      :+:    :+:   */
+/*   ft_is_negative.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: justvzyt <justvzyt@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/07/20 18:08:24 by justvzyt          #+#    #+#             */
-/*   Updated: 2025/07/20 19:30:01 by justvzyt         ###   ########.fr       */
+/*   Created: 2025/07/20 19:50:31 by justvzyt          #+#    #+#             */
+/*   Updated: 2025/07/20 19:50:52 by justvzyt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-void ft_print_reverse_alphabet(void) 
-{
-    int i = 122;
-
-    while (i>96) 
-    {
-        write(1, &i, 1);
-        i--;
+void ft_is_negative(int n) {
+    if (n < 0) {
+        write(1, &("N"), 1);
+    } else if (n > 0 || n == 0) {
+        write(1, &("P"), 1);
     }
 }
