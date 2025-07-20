@@ -1,1 +1,1 @@
-find . -name "*.sh" -printf '%f\n' | sed -e 's/\..*$//'
+find . -name "*.sh" | xargs -n 1 basename | cut -d. -f1
