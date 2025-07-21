@@ -2,24 +2,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_alphabet.c                                :+:      :+:    :+:   */
+/*   ft_putnbr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: justvzyt <justvzyt@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/07/20 10:21:38 by justvzyt          #+#    #+#             */
-/*   Updated: 2025/07/20 19:48:40 by justvzyt         ###   ########.fr       */
+/*   Created: 2025/07/21 16:08:07 by justvzyt          #+#    #+#             */
+/*   Updated: 2025/07/21 16:08:07 by justvzyt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-void    ft_print_alphabet(void)
+void	ft_putnbr(int nb)
 {
-    int i;
-    i = 97;
+	char g = '49';
+	write(1, &g, 1);
+}
 
-    while (i<123) {
-        write(1, &i, 1);
-        i++;
-    }
+int main(void)
+{
+	ft_putnbr(5);
+	return 0;
 }
