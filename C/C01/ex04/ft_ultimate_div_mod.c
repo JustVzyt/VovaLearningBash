@@ -1,16 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_ft.c                                            :+:      :+:    :+:   */
+/*   ft_ultimate_div_mod.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: justvzyt <justvzyt@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/07/21 16:55:35 by justvzyt          #+#    #+#             */
-/*   Updated: 2025/07/21 17:21:39 by justvzyt         ###   ########.fr       */
+/*   Created: 2025/07/21 17:25:56 by justvzyt          #+#    #+#             */
+/*   Updated: 2025/07/21 17:27:26 by justvzyt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	ft_ft(int *nbr)
+void	ft_ultimate_div_mod(int *a, int *b)
 {
-	*nbr = 42;
+	int	division;
+	int	mmod;
+
+	division = *a / *b;
+	mmod = *a % *b;
+	*a = division;
+	*b = mmod;
 }
