@@ -1,26 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_sort_int_tab.c                                  :+:      :+:    :+:   */
+/*   ft_strcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: justvzyt <justvzyt@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/07/21 18:30:11 by justvzyt          #+#    #+#             */
-/*   Updated: 2025/07/22 21:14:20 by justvzyt         ###   ########.fr       */
+/*   Created: 2025/07/22 21:14:21 by justvzyt          #+#    #+#             */
+/*   Updated: 2025/07/22 21:24:51 by justvzyt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	ft_sort_int_tab(int *tab, int size)
+char	*ft_strcpy(char *dest, char *src)
 {
-	int	bigger[sizeof(tab) / sizeof(int)];
-	int	new[10000];
+	int	i;
 
-	if (size < 2)
+	i = 0;
+	while (src[i] != '\0')
 	{
-		return (tab);
+		dest[i] = src[i];
+		i++;
 	}
-	else
-	{
 
-	}
+	return (dest);
 }
