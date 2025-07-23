@@ -1,26 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_sort_int_tab.c                                  :+:      :+:    :+:   */
+/*   ft_putstr_non_printable.c                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: justvzyt <justvzyt@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/07/21 18:30:11 by justvzyt          #+#    #+#             */
-/*   Updated: 2025/07/23 19:36:57 by justvzyt         ###   ########.fr       */
+/*   Created: 2025/07/23 13:02:07 by justvzyt          #+#    #+#             */
+/*   Updated: 2025/07/23 19:38:14 by justvzyt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	ft_sort_int_tab(int *tab, int size)
+#include <unistd.h>
+#include <stdio.h>
+
+void	ft_putstr_non_printable(char *str)
 {
-	int	bigger[sizeof(tab) / sizeof(int)];
-	int	new[10000];
+	int	i;
+	int	as_num;
 
-	if (size < 2)
+	i = 0;
+	while (str[i] != '\0')
 	{
-		return (tab);
+		as_num = (int)(str[i]);
+		if (as_num <= 31 || as_num == 127)
+		{
+			write(1, &(as_num), 1);
+		}
+		else
+		{
+			write(1, &str[i], 1);
+		}
+		i++;
 	}
-	else
-	{
+}
 
-	}
+int main(void) {
+	char a[] = "Hello wor\nld!";
+	ft_putstr_non_printable(a);
+	return 0;
 }

@@ -1,26 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_sort_int_tab.c                                  :+:      :+:    :+:   */
+/*   ft_strlowcase.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: justvzyt <justvzyt@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/07/21 18:30:11 by justvzyt          #+#    #+#             */
-/*   Updated: 2025/07/23 19:36:57 by justvzyt         ###   ########.fr       */
+/*   Created: 2025/07/23 11:05:57 by justvzyt          #+#    #+#             */
+/*   Updated: 2025/07/23 11:08:04 by justvzyt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	ft_sort_int_tab(int *tab, int size)
+char	*ft_strlowcase(char *str)
 {
-	int	bigger[sizeof(tab) / sizeof(int)];
-	int	new[10000];
+	int	i;
+	int	as_num;
 
-	if (size < 2)
+	i = 0;
+	while (str[i] != '\0')
 	{
-		return (tab);
+		as_num = (int)str[i];
+		if ((as_num >= 65) && (as_num <= 90))
+		{
+			str[i] = (char)(as_num + 32);
+		}
+		i++;
 	}
-	else
-	{
-
-	}
+	return (str);
 }

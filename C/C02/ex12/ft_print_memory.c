@@ -1,26 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_sort_int_tab.c                                  :+:      :+:    :+:   */
+/*   ft_print_memory.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: justvzyt <justvzyt@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/07/21 18:30:11 by justvzyt          #+#    #+#             */
-/*   Updated: 2025/07/23 19:36:57 by justvzyt         ###   ########.fr       */
+/*   Created: 2025/07/23 18:18:05 by justvzyt          #+#    #+#             */
+/*   Updated: 2025/07/23 18:19:17 by justvzyt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	ft_sort_int_tab(int *tab, int size)
+#include <unistd.h>
+
+void	*ft_print_memory(void *addr, unsigned int size)
 {
-	int	bigger[sizeof(tab) / sizeof(int)];
-	int	new[10000];
-
-	if (size < 2)
-	{
-		return (tab);
-	}
-	else
-	{
-
-	}
+	return (addr);
 }

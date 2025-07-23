@@ -1,29 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_str_is_numeric.c                                :+:      :+:    :+:   */
+/*   ft_strcapitalize.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: justvzyt <justvzyt@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/07/22 21:52:03 by justvzyt          #+#    #+#             */
-/*   Updated: 2025/07/23 10:44:07 by justvzyt         ###   ########.fr       */
+/*   Created: 2025/07/23 11:08:28 by justvzyt          #+#    #+#             */
+/*   Updated: 2025/07/23 12:22:22 by justvzyt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_str_is_numeric(char *str)
+char	*ft_strcapitalize(char *str)
 {
 	int	i;
-	int	as_num;
+	int	a;
+	int	new_word;
 
 	i = 0;
+	new_word = 1;
 	while (str[i] != '\0')
 	{
-		as_num = (int)str[i];
-		if ((as_num < 48) || (as_num > 57))
+		a = (int)str[i];
+		if (a >= 97 && a <= 122 && new_word == 1)
 		{
-			return (0);
+			str[i] = (char)(a - 32);
+		}
+		if (a >= 65 && a <= 90 && new_word == 0)
+		{
+			str[i] = (char)(a + 32);
+		}
+		new_word = 0;
+		if (a < 48 || (a > 57 && a < 65) || (a > 90 && a < 97) || a > 122)
+		{
+			new_word = 1;
 		}
 		i++;
 	}
-	return (1);
+	return (str);
 }

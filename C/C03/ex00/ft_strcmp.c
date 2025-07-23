@@ -1,26 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_sort_int_tab.c                                  :+:      :+:    :+:   */
+/*   ft_strcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: justvzyt <justvzyt@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/07/21 18:30:11 by justvzyt          #+#    #+#             */
-/*   Updated: 2025/07/23 19:36:57 by justvzyt         ###   ########.fr       */
+/*   Created: 2025/07/23 18:22:44 by justvzyt          #+#    #+#             */
+/*   Updated: 2025/07/23 19:36:47 by justvzyt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	ft_sort_int_tab(int *tab, int size)
+int	ft_strcmp(char *s1, char *s2)
 {
-	int	bigger[sizeof(tab) / sizeof(int)];
-	int	new[10000];
+	int	i;
 
-	if (size < 2)
+	i = 0;
+	while (s1[i] != '\0' || s2[i] != '\0')
 	{
-		return (tab);
+		if ((int)(s1[i]) != (int)(s2[i]))
+		{
+			return ((int)(s1[i]) - (int)(s2[i]));
+		}
+		i++;
 	}
-	else
-	{
-
-	}
+	return (0);
 }
