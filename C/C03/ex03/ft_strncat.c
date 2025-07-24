@@ -6,29 +6,30 @@
 /*   By: justvzyt <justvzyt@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/23 20:53:43 by justvzyt          #+#    #+#             */
-/*   Updated: 2025/07/24 11:17:40 by justvzyt         ###   ########.fr       */
+/*   Updated: 2025/07/24 13:53:13 by justvzyt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 char	*ft_strncat(char *dest, char *src, unsigned int nb)
 {
-	int	count_one;
-	unsigned int	i;
-
-	count_one = 0;
-	while (dest[count_one] != '\0')
-	{
-		count_one++;
-	}
+	int	i;
+	unsigned int	j;
 
 	i = 0;
-	while (src[i] != '\0' && i < nb)
+	while (dest[i] != '\0')
 	{
-		//printf("i = %d\n", i);
-		dest[count_one + i] = src[i];
 		i++;
 	}
+
+	j = 0;
+	while (src[j] != '\0' && j < nb)
+	{
+		dest[i + j] = src[j];
+		j++;
+	}
+
+	dest[i + j] = '\0';
 	return (dest);
 }
 
@@ -36,7 +37,7 @@ char	*ft_strncat(char *dest, char *src, unsigned int nb)
 //{
 //	char a[40] = "Hello";
 //	char b[5] = "World";
-//	char *result = ft_strncat(a, b, 2);
-//	printf("%s\n", result);
+//	char *result = ft_strncat(a, b, 5);
+//	printf("%s", result);
 //	return 0;
 //}

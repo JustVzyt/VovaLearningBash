@@ -6,7 +6,7 @@
 /*   By: justvzyt <justvzyt@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/23 13:02:07 by justvzyt          #+#    #+#             */
-/*   Updated: 2025/07/23 19:38:14 by justvzyt         ###   ########.fr       */
+/*   Updated: 2025/07/24 13:55:57 by justvzyt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,8 +34,8 @@ void	ft_putstr_non_printable(char *str)
 	}
 }
 
-int main(void) {
-	char a[] = "Hello wor\nld!";
-	ft_putstr_non_printable(a);
-	return 0;
-}
+//int main(void) {
+//	char a[] = "Hello wor\nld!";
+//	ft_putstr_non_printable(a);
+//	return 0;
+//}

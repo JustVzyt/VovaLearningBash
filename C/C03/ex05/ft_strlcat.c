@@ -6,7 +6,7 @@
 /*   By: justvzyt <justvzyt@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/24 11:37:30 by justvzyt          #+#    #+#             */
-/*   Updated: 2025/07/24 12:14:05 by justvzyt         ###   ########.fr       */
+/*   Updated: 2025/07/24 13:54:24 by justvzyt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,13 +29,14 @@ unsigned int ft_strlcat(char *dest, char *src, unsigned int size)
 		dest[count_one + i] = src[i];
 		i++;
 	}
+	dest[count_one + i] = '\0';
 	return (i);
 }
 
-int main(void) {
-	char a[30] = "Test";
-	char b[] = "Test";
-	ft_strlcat(a, b, 10);
-	printf("%s\n", a);
-	return 0;
-}
+//int main(void) {
+//	char a[30] = "Test";
+//	char b[] = "Test";
+//	ft_strlcat(a, b, 10);
+//	printf("%s\n", a);
+//	return 0;
+//}
