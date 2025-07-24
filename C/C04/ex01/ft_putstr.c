@@ -5,14 +5,9 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: justvzyt <justvzyt@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/07/21 17:27:47 by justvzyt          #+#    #+#             */
-/*   Updated: 2025/07/24 12:20:42 by justvzyt         ###   ########.fr       */
+/*   Created: 2025/07/24 12:17:21 by justvzyt          #+#    #+#             */
+/*   Updated: 2025/07/24 12:17:26 by justvzyt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
-
-void	ft_putstr(char *str)
-{
-	write(1, str, 10000);
-}
