@@ -1,42 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncat.c                                       :+:      :+:    :+:   */
+/*   ft_strstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: justvzyt <justvzyt@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/07/23 20:53:43 by justvzyt          #+#    #+#             */
-/*   Updated: 2025/07/24 11:17:40 by justvzyt         ###   ########.fr       */
+/*   Created: 2025/07/24 10:10:42 by justvzyt          #+#    #+#             */
+/*   Updated: 2025/07/24 11:35:54 by justvzyt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
-char	*ft_strncat(char *dest, char *src, unsigned int nb)
+char	*ft_strstr(char *str, char *to_find)
 {
-	int	count_one;
-	unsigned int	i;
-
-	count_one = 0;
-	while (dest[count_one] != '\0')
-	{
-		count_one++;
-	}
+	int		i;
+	int		j;
 
 	i = 0;
-	while (src[i] != '\0' && i < nb)
+	j = 0;
+	if (to_find[0] == '\0')
 	{
-		//printf("i = %d\n", i);
-		dest[count_one + i] = src[i];
-		i++;
+		return (str);
 	}
-	return (dest);
+	while (str[i] != '\0')
+	{
+		if (str[i++] == to_find[j])
+		{
+			if (to_find[++j] == '\0')
+			{
+				return (&str[i - j]);
+			}
+		}
+		else
+		{
+			j = 0;
+		}
+	}
+	return (NULL);
 }
-
-//int main(void)
-//{
-//	char a[40] = "Hello";
-//	char b[5] = "World";
-//	char *result = ft_strncat(a, b, 2);
-//	printf("%s\n", result);
-//	return 0;
-//}
