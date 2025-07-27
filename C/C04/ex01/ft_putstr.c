@@ -6,8 +6,18 @@
 /*   By: justvzyt <justvzyt@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/24 12:17:21 by justvzyt          #+#    #+#             */
-/*   Updated: 2025/07/24 13:41:34 by justvzyt         ###   ########.fr       */
+/*   Updated: 2025/07/25 15:58:04 by justvzyt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
+
+void	ft_putstr(char *str)
+{
+	int	i;
+
+	i = 0;
+	while (str[i++] != '\0')
+		;
+	write(1, str, i);
+}
