@@ -6,12 +6,11 @@
 /*   By: justvzyt <justvzyt@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/25 15:58:15 by justvzyt          #+#    #+#             */
-/*   Updated: 2025/07/27 15:49:00 by justvzyt         ###   ########.fr       */
+/*   Updated: 2025/07/27 21:18:45 by justvzyt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
-#include <stdio.h>
 
 int	num_len(int num)
 {
@@ -22,6 +21,11 @@ int	num_len(int num)
 	division = 10;
 	while (num % division != num)
 	{
+		if (division >= 1000000000)
+		{
+			len++;
+			break ;
+		}
 		division *= 10;
 		len++;
 	}
@@ -40,12 +44,16 @@ int	ppow(int num, int power)
 	return (product);
 }
 
-void	check_for_negative(int *num)
+void	check_for_negative(int *num, int *if_neg)
 {
 	if (*num < 0)
 	{
-		*num *= -1;
+		*if_neg = -1;
 		write(1, "-", 1);
+	}
+	else
+	{
+		*if_neg = 1;
 	}
 }
 
@@ -59,10 +67,11 @@ void	ft_putnbr(int nb)
 	char	to_print;
 	int		res;
 	int		i;
+	int		if_neg;
 
-	check_for_negative(&nb);
+	check_for_negative(&nb, &if_neg);
 	multiplier = ppow(10, num_len(nb) - 1);
-	to_print = (char)(nb / multiplier + 48);
+	to_print = (char)((nb / multiplier) * if_neg + 48);
 	if (num_len(nb) > 1)
 		write(1, &to_print, 1);
 	while (multiplier >= 10)
@@ -75,17 +84,8 @@ void	ft_putnbr(int nb)
 			i /= 10;
 		}
 		res /= (multiplier / 10);
-		to_print = (char)(res + 48);
+		to_print = (char)(if_neg * res + 48);
 		write(1, &to_print, 1);
 		multiplier /= 10;
 	}
 }
-
-
-int main(void) {
-	int a = -42;
-	ft_putnbr(a);
-	return 0;
-}
-
-
