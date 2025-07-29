@@ -6,7 +6,7 @@
 /*   By: justvzyt <justvzyt@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/29 15:32:51 by justvzyt          #+#    #+#             */
-/*   Updated: 2025/07/29 18:02:11 by justvzyt         ###   ########.fr       */
+/*   Updated: 2025/07/29 18:11:24 by justvzyt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,9 +37,9 @@ int	check_base(char *base)
 	return (1);
 }
 
-int	len(char *base)
+unsigned int	len(char *base)
 {
-	int	i;
+	unsigned int	i;
 
 	i = 0;
 	while (base[++i] != '\0')
@@ -49,22 +49,27 @@ int	len(char *base)
 
 void	ft_putnbr_base(int nbr, char *base)
 {
+	unsigned int	nn;
+
 	if (nbr < 0)
 	{
 		nbr *= -1;
 		write(1, "-", 1);
 	}
+	nn = nbr;
 	if (check_base(base) != 0)
 	{
-		if (nbr == len(base))
-			write(1, &base[nbr - 1], 1);
+		if (nn == len(base))
+			write(1, &base[nn - 1], 1);
 		else
 		{
-			if (nbr / len(base) != 0)
-				ft_putnbr_base(nbr / len(base), base);
-			write(1, &(base[nbr % len(base)]), 1);
+			if (nn / len(base) != 0)
+				ft_putnbr_base(nn / len(base), base);
+			write(1, &(base[nn % len(base)]), 1);
 		}
 	}
+	if (nbr == -2147483648)
+		write(1, "0", 1);
 }
 
 //int	main(void)
