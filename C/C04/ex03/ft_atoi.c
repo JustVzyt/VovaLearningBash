@@ -6,7 +6,7 @@
 /*   By: justvzyt <justvzyt@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/25 16:09:34 by justvzyt          #+#    #+#             */
-/*   Updated: 2025/07/29 15:28:38 by justvzyt         ###   ########.fr       */
+/*   Updated: 2025/07/29 15:47:54 by justvzyt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,6 +54,9 @@ int	ft_atoi(char *str)
 	int	i;
 	int	counters[2];
 
+	counters[0] = 0;
+	counters[1] = 0;
+
 	i = 0;
 	while (str[i] != '\0')
 	{
@@ -68,14 +71,14 @@ int	ft_atoi(char *str)
 		}
 		else
 			break ;
-		//printf("Executed with i = %d; symbol is %c\n", i, str[i]);
 		i++;
 	}
-	return (char_to_int(str, counters[0], counters[1]));
+	int abc = char_to_int(str, counters[0], counters[1]);
+	return (abc);
 }
 
-int main(void) {
-	char a[] = "12345";
-	printf("Result: %d\n", ft_atoi("12345"));
-	return 0;
-}
+//int main(void) {
+//	char a[] = "12345";
+//	printf("Result: %d\n", ft_atoi("12345"));
+//	return 0;
+//}
