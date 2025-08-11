@@ -1,30 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_params.c                                  :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: justvzyt <justvzyt@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/08/05 12:09:11 by justvzyt          #+#    #+#             */
-/*   Updated: 2025/08/08 21:02:14 by justvzyt         ###   ########.fr       */
+/*   Created: 2025/08/08 21:02:59 by justvzyt          #+#    #+#             */
+/*   Updated: 2025/08/11 21:16:15 by justvzyt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#include <stdlib.h>
 
-int	main(int argc, char *argv[])
+char	*ft_strdup(char *src)
 {
-	int	i;
-	int	size;
+	char	*result;
+	int		i;
 
-	i = 1;
-	while (i < argc)
+	i = 0;
+	while (src[i] != '\0')
+		i++;
+	result = malloc(i + 1);
+	i = 0;
+	while (src[i] != '\0')
 	{
-		size = 0;
-		while (argv[i][size] != '\0')
-			size++;
-		write(1, argv[i], size);
-		write(1, "\n", 1);
+		*(result + i) = src[i];
 		i++;
 	}
+	*(result + i) = '\0';
+	return (result);
 }

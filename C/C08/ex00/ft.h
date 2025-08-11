@@ -1,30 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_params.c                                  :+:      :+:    :+:   */
+/*   ft.h                                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: justvzyt <justvzyt@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/08/05 12:09:11 by justvzyt          #+#    #+#             */
-/*   Updated: 2025/08/08 21:02:14 by justvzyt         ###   ########.fr       */
+/*   Created: 2025/08/10 10:26:11 by justvzyt          #+#    #+#             */
+/*   Updated: 2025/08/10 10:28:37 by justvzyt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-
-int	main(int argc, char *argv[])
-{
-	int	i;
-	int	size;
-
-	i = 1;
-	while (i < argc)
-	{
-		size = 0;
-		while (argv[i][size] != '\0')
-			size++;
-		write(1, argv[i], size);
-		write(1, "\n", 1);
-		i++;
-	}
-}
+void	ft_putchar(char c);
+void	ft_swap(int *a, int *b);
+void	ft_putstr(char *str);
+int		ft_strlen(char *str);
+int		ft_strcmp(char *s1, char *s2);
